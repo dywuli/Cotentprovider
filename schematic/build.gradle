@@ -1,0 +1,36 @@
+allprojects {
+  repositories {
+    google()
+    jcenter()
+  }
+}
+
+ext {
+  versionCode = 1
+  versionName = '0.7.1'
+
+  minSdkVersion = 15
+  targetSdkVersion = 26
+
+  compileSdkVersion = 26
+  buildToolsVersion = '26.0.1'
+}
+
+ext.libraries = [
+  kotlinPlugin: 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.4-2',
+  kotlinRuntime: 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.4-2',
+  androidGradle: 'com.android.tools.build:gradle:2.3.3',
+
+  javapoet: 'com.squareup:javapoet:1.7.0',
+
+  appcompat: 'com.android.support:appcompat-v7:26.0.1',
+  supportv4: 'com.android.support:support-v4:26.0.1',
+  recyclerview: 'com.android.support:recyclerview-v7:26.0.1',
+
+  butterknife: 'com.jakewharton:butterknife:8.4.0',
+  butterknifeCompiler: 'com.jakewharton:butterknife-compiler:8.4.0',
+
+  guava: 'com.google.guava:guava:19.0',
+
+  jsr305: 'com.google.code.findbugs:jsr305:3.0.2'
+]

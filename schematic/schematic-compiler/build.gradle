@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+apply plugin: 'checkstyle'
+
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+  compile project(':schematic-annotations')
+  compile parent.libraries.javapoet
+  compile parent.libraries.guava
+}
+
+checkstyle {
+  configFile project.file('../config/checkstyle/checkstyle.xml')
+  showViolations true
+}
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

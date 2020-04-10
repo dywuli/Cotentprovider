@@ -1,0 +1,24 @@
+language: android
+
+jdk:
+ - oraclejdk8
+
+env: CI=travis
+
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-26.0.1
+    - android-26
+
+before_install:
+  - TERM=dumb
+
+install:
+  - ./gradlew assembleDebug
+
+script:
+  - ./gradlew checkDebug
+
+sudo: false
